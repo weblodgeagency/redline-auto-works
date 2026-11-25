@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redline Auto Works — Honest Auto Repair in Colorado Springs, CO</title>
+<meta name="description" content="Redline Auto Works is an independent auto repair shop in Colorado Springs, CO — brakes, oil changes, diagnostics, and engine repair with honest, upfront prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f4f4f2;--card:#ffffff;--ink:#1c1e22;--muted:#6b6f75;--line:#e3e3e0;--accent:#c1272d;--accent-dark:#9c1e23;--steel:#2b2f36;--dark:#1c1e22}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(244,244,242,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
+  .logo svg{width:42px;height:42px;flex-shrink:0}
+  .nav-links{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .nav-links a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:12px 26px;border-radius:6px;transition:.2s;border:2px solid var(--accent)}
+  .btn:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
+  .btn-outline{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:#fff}
+  .btn-sm{padding:9px 20px;font-size:.9rem}
+  .hero{position:relative;border-radius:16px;overflow:hidden;margin:32px 0 56px;min-height:480px;display:flex;align-items:flex-end}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(16,17,20,.85),rgba(16,17,20,.15) 60%)}
+  .hero-content{position:relative;z-index:1;padding:48px;color:#fff;max-width:640px}
+  .hero-content .tag{display:inline-block;background:var(--accent);color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:16px}
+  .hero-content h1{font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;margin-bottom:14px;text-transform:uppercase;letter-spacing:.01em}
+  .hero-content p{font-size:1.05rem;opacity:.92;margin-bottom:24px}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-btns .btn-outline{color:#fff;border-color:#fff}
+  .hero-btns .btn-outline:hover{background:#fff;color:var(--ink)}
+  section{margin-bottom:64px}
+  .section-head{text-align:center;max-width:620px;margin:0 auto 36px}
+  .section-head .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .section-head h2{font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.15;margin-bottom:10px;text-transform:uppercase}
+  .section-head p{color:var(--muted)}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .about img{width:100%;border-radius:12px;object-fit:cover;height:340px}
+  .about h2{font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,3vw,2rem);line-height:1.15;margin-bottom:14px;text-transform:uppercase}
+  .about p{color:var(--muted);margin-bottom:12px}
+  .about .facts{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
+  .about .fact b{display:block;font-family:'Oswald',sans-serif;font-size:1.5rem;color:var(--accent)}
+  .about .fact span{font-size:.88rem;color:var(--muted)}
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .menu-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px}
+  .menu-card h3{font-family:'Oswald',sans-serif;font-size:1.2rem;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--accent);text-transform:uppercase}
+  .dish{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .dish:last-child{border-bottom:none}
+  .dish .name{font-weight:600;font-size:.95rem}
+  .dish .desc{font-size:.85rem;color:var(--muted)}
+  .dish .price{font-weight:700;color:var(--accent);white-space:nowrap}
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .member{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;text-align:center}
+  .member .initials{width:72px;height:72px;border-radius:50%;background:var(--steel);color:#fff;font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  .member h3{font-family:'Oswald',sans-serif;font-size:1.15rem;margin-bottom:4px;text-transform:uppercase}
+  .member .role{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
+  .member p{font-size:.92rem;color:var(--muted)}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .review{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px}
+  .review .stars{color:#e8a013;font-size:1.1rem;letter-spacing:2px;margin-bottom:10px}
+  .review p{font-size:.95rem;color:var(--muted);margin-bottom:14px}
+  .review .who{font-weight:700;font-size:.9rem}
+  .review .who span{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+  .visit{background:var(--dark);color:#f2f2f0;border-radius:16px;padding:48px 32px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .visit h2{font-family:'Oswald',sans-serif;font-size:1.6rem;margin-bottom:14px;text-transform:uppercase}
+  .visit p{opacity:.85;margin-bottom:8px}
+  .visit a{color:#ff8a8e;font-weight:600}
+  .visit .hours{width:100%;border-collapse:collapse}
+  .visit .hours td{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.95rem}
+  .visit .hours td:last-child{text-align:right}
+  .cta{text-align:center}
+  .cta .btn{font-size:1.05rem;padding:15px 36px}
+  footer{border-top:1px solid var(--line);padding:28px 0 40px;text-align:center;font-size:.9rem;color:var(--muted)}
+  footer a{color:var(--ink);font-weight:600}
+  @media (max-width:860px){
+    .about,.visit{grid-template-columns:1fr}
+    .menu-grid,.reviews,.team{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+    .hero{min-height:380px}
+    .hero-content{padding:32px 24px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="9" fill="#1c1e22"/><path d="M30.5 10.5a9.5 9.5 0 0 0-12.4 12.6L10 31.2a3.4 3.4 0 0 0 4.8 4.8l8.1-8.1A9.5 9.5 0 0 0 35.5 15.5l-5 5-3.5-1.5-1.5-3.5 5-5z" fill="#c1272d"/><path d="M14 38h20" stroke="#c1272d" stroke-width="3" stroke-linecap="round"/></svg>
+      Redline Auto Works
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#team">Our Mechanics</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+      <a class="btn btn-sm" href="tel:+17195550191">Call (719) 555-0191</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=2000&auto=format&fit=crop" alt="Engine bay being serviced at Redline Auto Works">
+    <div class="hero-content">
+      <span class="tag">Auto repair · Colorado Springs</span>
+      <h1>Fixed right. Priced straight.</h1>
+      <p>An independent shop on Academy Boulevard — ASE-certified mechanics, honest diagnostics, and a written quote before we touch a bolt.</p>
+      <div class="hero-btns">
+        <a class="btn" href="#services">See services &amp; prices</a>
+        <a class="btn btn-outline" href="tel:+17195550191">Book an appointment</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1600&auto=format&fit=crop" alt="Mechanic working under a car at Redline Auto Works">
+    <div>
+      <h2>A neighborhood shop that treats your car like its own.</h2>
+      <p>We opened Redline because too many drivers were handed a bill they did not understand. Here, every repair starts with a clear diagnosis, a written estimate, and a phone call before anything extra gets done.</p>
+      <p>From daily drivers to work trucks, we service all makes and models — and every repair is backed by our 24-month / 24,000-mile warranty.</p>
+      <div class="facts">
+        <div class="fact"><b>4.9 ★</b><span>610+ customer reviews</span></div>
+        <div class="fact"><b>5</b><span>ASE-certified mechanics</span></div>
+        <div class="fact"><b>2014</b><span>Serving Colorado Springs since</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-head">
+      <span class="eyebrow">Services &amp; Prices</span>
+      <h2>Upfront prices, no surprises</h2>
+      <p>Every visit starts with a free multi-point inspection. You approve the estimate before we start any work.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>Maintenance</h3>
+        <div class="dish"><div><div class="name">Full Synthetic Oil Change</div><div class="desc">Up to 5 quarts, filter, fluid top-off</div></div><div class="price">$59</div></div>
+        <div class="dish"><div><div class="name">Tire Rotation &amp; Balance</div><div class="desc">Four-wheel rotation, balance check</div></div><div class="price">$39</div></div>
+        <div class="dish"><div><div class="name">Multi-Point Inspection</div><div class="desc">Brakes, fluids, belts, tires, battery</div></div><div class="price">Free</div></div>
+        <div class="dish"><div><div class="name">Coolant Flush</div><div class="desc">Drain, flush, refill, pressure test</div></div><div class="price">$129</div></div>
+      </div>
+      <div class="menu-card">
+        <h3>Brakes &amp; Suspension</h3>
+        <div class="dish"><div><div class="name">Brake Pads &amp; Rotors</div><div class="desc">Per axle, parts and labor included</div></div><div class="price">from $289</div></div>
+        <div class="dish"><div><div class="name">Brake Fluid Flush</div><div class="desc">Full system flush and bleed</div></div><div class="price">$89</div></div>
+        <div class="dish"><div><div class="name">Shock &amp; Strut Replacement</div><div class="desc">Per pair, alignment check included</div></div><div class="price">from $449</div></div>
+        <div class="dish"><div><div class="name">Wheel Alignment</div><div class="desc">Four-wheel laser alignment</div></div><div class="price">$99</div></div>
+      </div>
+      <div class="menu-card">
+        <h3>Diagnostics &amp; Engine</h3>
+        <div class="dish"><div><div class="name">Check Engine Diagnosis</div><div class="desc">Full scan, road test, written report</div></div><div class="price">$89</div></div>
+        <div class="dish"><div><div class="name">Battery Test &amp; Replacement</div><div class="desc">Load test, terminals cleaned</div></div><div class="price">from $149</div></div>
+        <div class="dish"><div><div class="name">Timing Belt Service</div><div class="desc">Belt, tensioner, water pump</div></div><div class="price">from $649</div></div>
+        <div class="dish"><div><div class="name">A/C Recharge &amp; Repair</div><div class="desc">Leak check, recharge, cold-air test</div></div><div class="price">from $139</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="section-head">
+      <span class="eyebrow">Meet the Mechanics</span>
+      <h2>Certified hands on every car</h2>
+      <p>Every technician at Redline is ASE-certified, and the same mechanic who diagnoses your car is the one who fixes it.</p>
+    </div>
+    <div class="team">
+      <div class="member">
+        <div class="initials">MH</div>
+        <h3>Mike Hartman</h3>
+        <div class="role">Owner · Master Technician</div>
+        <p>Twenty years under the hood, twelve of them running this shop. Engine work and diagnostics are his home turf.</p>
+      </div>
+      <div class="member">
+        <div class="initials">DR</div>
+        <h3>Dan Ruiz</h3>
+        <div class="role">Brakes &amp; Suspension</div>
+        <p>Former dealership technician. Brakes, steering, and suspension — if it stops or steers, Dan has fixed it.</p>
+      </div>
+      <div class="member">
+        <div class="initials">SP</div>
+        <h3>Sara Patel</h3>
+        <div class="role">Diagnostics &amp; Electrical</div>
+        <p>Electrical gremlins and check-engine lights. Sara tracks down the problems other shops send away.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-head">
+      <span class="eyebrow">Customer Reviews</span>
+      <h2>Colorado Springs trusts Redline</h2>
+      <p>4.9 out of 5 from more than 610 drivers.</p>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"They showed me the worn pads before replacing anything and the final bill matched the quote to the dollar. First shop I have ever fully trusted."</p>
+        <div class="who">James W.<span>Colorado Springs · Google review</span></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"My check engine light had stumped two other shops. Sara found a cracked vacuum hose in an hour and charged me less than the diagnostic fee."</p>
+        <div class="who">Karen T.<span>Monument · Google review</span></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Took my truck in for brakes and an oil change before a road trip. Done the same day, fair price, and they washed it. I will not go anywhere else."</p>
+        <div class="who">Marcus D.<span>Fountain · Google review</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div>
+      <h2>Come by the shop</h2>
+      <p>4820 North Academy Boulevard<br>Colorado Springs, CO 80918</p>
+      <p><a href="tel:+17195550191">(719) 555-0191</a></p>
+      <p>Appointments recommended — same-day slots most weekdays. Free loaner car while yours is in the bay.</p>
+    </div>
+    <div>
+      <table class="hours">
+        <tr><td>Monday – Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+        <tr><td>Saturday</td><td>9:00 AM – 3:00 PM</td></tr>
+        <tr><td>Sunday</td><td>Closed</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a class="btn" href="tel:+17195550191">Book your service — (719) 555-0191</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Redline Auto Works · Colorado Springs, CO</p>
+    <p>Website designed &amp; built by <a href="https://weblodge.agency" target="_blank" rel="noopener">Weblodge Agency</a></p>
+  </div>
+</footer>
+</body>
+</html>
